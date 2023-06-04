@@ -1,23 +1,26 @@
+const ContactsRepository = require('../repositories/ContactsRepository');
+
 class ContactController {
-  index(request, response) {
-    // Listar todos os registro
-    response.send('Hello World!!!');
+  // Listar todos os registro
+  async index(request, response) {
+    const contacts = await ContactsRepository.findAll();
+    response.json(contacts);
   }
 
+  // Obter um registro
   show() {
-    // Obter um registro
   }
 
+  // Criar novo registro
   store() {
-    // Criar novo registro
   }
 
+  // Editar um registro
   update() {
-    // Editar um registro
   }
 
+  // Deletar um registro
   delete() {
-    // Deletar um registro
   }
 }
 
